@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>The Crypt</title>
+<head>
+
+</head>
+<body>
+    <div>
+        <h1>The Crypt</h1>
+        <h2>Providing encryption and decryption for your text or files</h2>
+    </div>
+    <div>
+        <label class="required-input" for="method">Encryption Method:</label>
+        <select id="method" name="method" required>
+            <option value="aes">AES</option>
+            <option value="des">DES</option>
+            <option value="rsa">RSA</option>
+            <option value="rabbit">Rabbit</option>
+        </select>
+        <label class="required-input" for="direction">Encrypt or Decrypt:</label>
+        <select id="direction" name="direction" required>
+            <option value="encryption">Encrypt</option>
+            <option value="decryption">Decrypt</option>
+        </select>
+        <label class="optional-input" for="mode">Encryption mode:</label>
+        <select id="mode" name="mode">
+            <option value="cbc" selected>CBC</option>
+            <option value="cfb">CFB</option>
+            <option value="ctr">CTR</option>
+            <option value="ofb">OFB</option>
+            <option value="ecb">ECB</option>
+        </select>
+        <label class="optional-input" for="cipher-padding">Padding</label>
+        <select id="cipher-padding" name="cipher-padding">
+            <option value="pkcs7" selected>PKCS#7</option>
+            <option value="iso97971">ISO 9797-1</option>
+            <option value="ansix923">ANSI X9.23</option>
+            <option value="iso10126">ISO 10126</option>
+            <option value="zeropadding">Zero Padding</option>
+            <option value="nopadding">No Padding</option>
+        </select>
+        <label class="required-input" for="passphrase">Passphrase:</label>
+        <input type="text" id="passphrase" name="passphrase" placeholder="Secret password">
+    </div>
+    <div>
+        <label class="optional-input" for="file-select">Select a file:</label>
+        <input type="file" id="file-select" name="file-select">
+        <!-- Turn this into nice looking button during CSS
+             https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file-->
+    </div>
+    <div>
+        <textarea id="input-text" name="input-text" rows="10" cols="50" placeholder="Or enter text here"></textarea>
+        <button type="button">Process</button>
+        <textarea id="output-text" name="output-text" rows="10" cols="50" readonly></textarea>
+    </div>
+    <div id="progress-bar-background">
+        <div id="progress-bar-indicator"></div>
+        <!---Build out CSS and JS to make dynamic progress bar-->
+    </div>
+    <div>
+        <p>Click the photo to download your file</p>
+        <!--href is the processed file to download, img src is displayed -->
+        <a href="" download>
+            <img src="">
+        </a>
+    </div>
+</body>
+</html>
