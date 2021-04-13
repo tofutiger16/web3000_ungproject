@@ -5,6 +5,7 @@
 <head>
     <link rel="stylesheet" href="stylesheet.css">
     <script src="thecrypt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 </head>
 <body>
     <div class="header">
@@ -61,7 +62,7 @@
             <textarea id="input-text" name="input-text" rows="10" cols="50" placeholder="Or enter text here"></textarea>
         </div>
         <div class="process-button-column">
-            <button type="button" id="process-button">Process</button>
+            <button onclick="encrypt()" type="button" id="process-button">Process</button>
         </div>
         <div class="column">
             <textarea id="output-text" name="output-text" rows="10" cols="50" readonly></textarea>
@@ -78,5 +79,8 @@
             <img src="">
         </a>
     </div>
+    
+    <script src="asymmetric.js"></script>
+    <script src="encrypt.js"></script>
 </body>
 </html>
