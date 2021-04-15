@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>RSA Key Generator</title>
+        <script src="RSA/jquery.js"></script>
+        <script src="RSA/bootstrap.js"></script>
+        <script type="text/javascript" src="RSA/jsencrypt.js"></script>
+    </head>
+    <body>
+        <h1>RSA Key Generator</h1>
+        <br>&nbsp;<br>
+        <button id="generate" class="btn btn-primary">Generate New Keys</button>
+        <br>&nbsp;<br>
+        <br>&nbsp;<br>
+
+        <div class="col-lg-10">
+            <div class="row">
+              <div class="col-lg-6">
+                <label for="privkey">Private Key</label><br>
+                <small>
+                  <textarea id="privkey" rows="15" style="width:100%">-----BEGIN RSA PRIVATE KEY-----
+    MIICXAIBAAKBgQCLt9gM1ldnVlLbufhjBF+NG1et2HoZ18y5J5xTBMqp3ZdYlLUa
+    /NV/Lsh6LmBtAt/sY0AK5sd6HY9/rks+BCfb9JkcpS4S8319P9HRNRYK/UjGFtuU
+    fmJnS50jLjQxAKbiY4j+dZpese1zPnpcx3W+4Q3ELcpIpn8L8G3pysrTsQIDAQAB
+    AoGBAIK5QjXQnfqbs+7Ns27Ber1FpeWMM8HWPT/HpeWvCAeiwqYojMJxaTgUB5L5
+    rVKRa/16Z0NL5buFyOuHofKmZLtvNuYpmgcsNUl0QyraWDCz1AOIAw3oB+xjBN1O
+    ruvLX04eFSouwHRadyVQklzVfd/XQh+yYO09atqeSctJOcChAkEAyNR+bJLBvQ9C
+    2SohDHqlTIAv7gP5rsaJhRWYkW4b9q7y1sn76z9/nlUIBr84kRLvpihujkuAtHd5
+    EJS9kQhS7QJBALIZnUrM5VKI0vKMAOVegVqPMSJCkUVVwjmnILh+mLllRYotZyyI
+    XY6kTTnabloYeRZukdUIQ5KjyKShB5tkF1UCQFaX2RMzjDnatLYyhiF9WHzN4Ny9
+    9hC4Jl+t2iUK1x/ce3TFjsv2iy5X96gBF4DmK1L3qAPO5mXqBddyavJ4JlkCQC8p
+    v1COn+/SUeJvFtGmzCR6JO3IqQWuZyezTWPuCm2WFus3iMnvNq9ObTDz2iM7td0t
+    3KqIbLSJcNm/1u7ce50CQFbFe1bcMwbEJ1dc4QokF9MjdgrX/YK9GZL1JRDqoYuK
+    sEVZlLkA/Bo5l2WCCUZJIpEAmhxtO1lAYXBd0uK2NgI=
+    -----END RSA PRIVATE KEY-----</textarea>
+                </small>
+              </div>
+              <div class="col-lg-6">
+                <label for="pubkey">Public Key</label><br>
+                <small><textarea id="pubkey" rows="15" style="width:100%" readonly="readonly">-----BEGIN PUBLIC KEY-----
+    MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCLt9gM1ldnVlLbufhjBF+NG1et
+    2HoZ18y5J5xTBMqp3ZdYlLUa/NV/Lsh6LmBtAt/sY0AK5sd6HY9/rks+BCfb9Jkc
+    pS4S8319P9HRNRYK/UjGFtuUfmJnS50jLjQxAKbiY4j+dZpese1zPnpcx3W+4Q3E
+    LcpIpn8L8G3pysrTsQIDAQAB
+    -----END PUBLIC KEY-----</textarea></small>
+              </div>
+            </div>
+          </div>
+    <h3>RSA Encryption Test</h3>
+    <label for="input">Text to encrypt:</label><br>
+    <textarea id="input" name="input" style="width: 100%" rows="4">This is a test!</textarea>
+
+    <label>&nbsp;</label><br>
+    <button id="execute" class="btn btn-primary">Encrypt / Decrypt</button>
+
+    <label for="crypted">Encrypted:</label><br>
+    <textarea id="crypted" name="crypted" style="width: 100%" rows="4"></textarea>
+
+    <script type="text/javascript">
+        $(function () {
+      
+          //Change the key size value for new keys
+          $(".change-key-size").each(function (index, value) {
+            var el = $(value);
+            var keySize = el.attr('data-value');
+            el.click(function (e) {
+              var button = $('#key-size');
+              button.attr('data-value', keySize);
+              button.html(keySize + ' bit <span class="caret"></span>');
+              e.preventDefault();
+            });
+          });
+      
+          // Execute when they click the button.
+          $('#execute').click(function () {
+      
+            // Create the encryption object.
+            var crypt = new JSEncrypt();
+      
+            // Set the private.
+            crypt.setPrivateKey($('#privkey').val());
+            //return;
+            // If no public key is set then set it here...
+            var pubkey = $('#pubkey').val();
+            if (!pubkey) {
+              $('#pubkey').val(crypt.getPublicKey());
+            }
+      
+            // Get the input and crypted values.
+            var input = $('#input').val();
+            var crypted = $('#crypted').val();
+      
+            // Alternate the values.
+            if (input) {
+              $('#crypted').val(crypt.encrypt(input));
+              $('#input').val('');
+            }
+            else if (crypted) {
+              var decrypted = crypt.decrypt(crypted);
+              if (!decrypted)
+                decrypted = 'This is a test!';
+              $('#input').val(decrypted);
+              $('#crypted').val('');
+            }
+          });
+      
+          var generateKeys = function () {
+            var sKeySize = $('#key-size').attr('data-value');
+            var keySize = parseInt(sKeySize);
+            var crypt = new JSEncrypt({default_key_size: keySize});
+            var async = $('#async-ck').is(':checked');
+            var dt = new Date();
+            var time = -(dt.getTime());
+            if (async) {
+              $('#time-report').text('.');
+              var load = setInterval(function () {
+                var text = $('#time-report').text();
+                $('#time-report').text(text + '.');
+              }, 500);
+              crypt.getKey(function () {
+                clearInterval(load);
+                dt = new Date();
+                time += (dt.getTime());
+                $('#time-report').text('Generated in ' + time + ' ms');
+                $('#privkey').val(crypt.getPrivateKey());
+                $('#pubkey').val(crypt.getPublicKey());
+              });
+              return;
+            }
+            crypt.getKey();
+            dt = new Date();
+            time += (dt.getTime());
+            $('#time-report').text('Generated in ' + time + ' ms');
+            $('#privkey').val(crypt.getPrivateKey());
+            $('#pubkey').val(crypt.getPublicKey());
+          };
+      
+          // to generate new keys.
+          $('#generate').click(generateKeys);
+          generateKeys();
+        });
+      </script>
+
+    </body>
+</html>
