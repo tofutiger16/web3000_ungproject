@@ -1,20 +1,31 @@
-
-
+let fR= new FileReader();
+let fileText="";
+let input=document.getElementById("file-select");
+input.onchange= function(event){
+fR.readAsText(event.target.files[0])
+}
+fR.onload=function(){
+    console.log(fR.result);
+    fileText=fR.result;
+}
 function aes(){
-    let methodSelected=document.getElementById('method').value;
+let methodSelected=document.getElementById('method').value;
 let directionSelected= document.getElementById('direction').value;
 let modeSelected=document.getElementById('mode').value;
 let cipherPaddingSelected= document.getElementById("cipher-padding").value;
 let outputBox= document.getElementById("output-text");
     let string = document.getElementById("input-text").value;
     let passphrase = document.getElementById("passphrase").value;
+    if(string===""){
+        string=fileText;
+    }
 
     let output = "";
     let salt ="";
     outputBox.innerHTML = "";
 
     let mode = determinMode(modeSelected);
-    let padding = determinePadding(cipherPaddingSelected);
+    let padding = cbcencrypt(cipherPaddingSelected);
 
     if(methodSelected==="aes"){
         if(directionSelected==="encryption"){
@@ -24,15 +35,15 @@ let outputBox= document.getElementById("output-text");
             if(modeSelected=== "cfb"){
                 output=CryptoJS.AES.encrypt(string, passphrase, "{ mode: "+mode+", padding:"+padding+"");
             }
-            
+
             if(modeSelected === "ctr"){
                 output=CryptoJS.AES.encrypt(string, passphrase, "{ mode: "+mode+", padding:"+padding+"");
             }
-            
+
             if(modeSelected === "ofb"){
                 output=CryptoJS.AES.encrypt(string, passphrase, "{ mode: "+mode+", padding:"+padding+"");
             }
-            
+
             if(modeSelected==="ecb"){
                 output=CryptoJS.AES.encrypt(string, passphrase, "{ mode: "+mode+", padding:"+padding+"");
             }
@@ -45,20 +56,20 @@ let outputBox= document.getElementById("output-text");
             if(modeSelected=== "cfb"){
                 output=CryptoJS.AES.decrypt(string, passphrase, "{ mode: "+mode+", padding:"+padding+"");
             }
-            
+
             if(modeSelected === "ctr"){
                 output=CryptoJS.AES.decrypt(string, passphrase, "{ mode: "+mode+", padding:"+padding+"");
             }
-            
+
             if(modeSelected === "ofb"){
                 output=CryptoJS.AES.decrypt(string, passphrase, "{ mode: "+mode+", padding:"+padding+"");
             }
-            
+
             if(modeSelected==="ecb"){
                 output=CryptoJS.AES.decrypt(string, passphrase, "{ mode: "+mode+", padding:"+padding+"");
             }
         }   
-        
+
         if(directionSelected === "encryption"){
             outputBox.innerHTML = output+salt;
         }else{
