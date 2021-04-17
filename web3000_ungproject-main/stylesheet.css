@@ -1,0 +1,67 @@
+html {
+    background-color: #000000;
+}
+body{
+
+}
+.header {
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    background-color: #ccc;/*for testing*/
+}
+.header h2{
+    font-size: 20px;
+}
+.user-input-row {
+    padding: 10px;
+    background-color: #ddd;/*for testing*/
+    display: -webit-flex;
+    display: flex;
+}
+.required-input-column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    background-color:#eee;/*for testing*/
+}
+.optional-input-column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    padding: 10px;
+    background-color:#aaa;/*for testing*/
+}
+.passphrase-row {
+    padding: 5px;
+    background-color: #ccc;/*for testing*/
+}
+.file-select-row {
+    padding: 5px;
+    background-color: #ddd;/*for testing*/
+}
+.processing-row {
+    display: -webkit-flex;
+    display: flex;
+}
+.column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    background-color: #aaa; /*for testing*/
+}
+.process-button-column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    display: flex;
+    flex: .25;
+    padding: 10px;
+    background-color: #bbb; /*for testing*/
+    align-items: center;
+    justify-content: center;
+}
+.download-file-row {
+    padding: 5px;
+    background-color: #eee; /*for testing*/
+}
