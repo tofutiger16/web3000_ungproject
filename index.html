@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>The Crypt</title>
 <head>
+    <meta charset="UTF-8">
+    <title>The Crypt</title>
     <link rel="stylesheet" href="stylesheet.css">
     <script src="thecrypt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.js"></script>
 </head>
 <body>
     <div class="header">
@@ -61,7 +64,7 @@
             <textarea id="input-text" name="input-text" rows="10" cols="50" placeholder="Or enter text here"></textarea>
         </div>
         <div class="process-button-column">
-            <button type="button" id="process-button">Process</button>
+            <button onclick="encrypt()" type="button" id="process-button">Process</button>
         </div>
         <div class="column">
             <textarea id="output-text" name="output-text" rows="10" cols="50" readonly></textarea>
@@ -77,6 +80,9 @@
         <a href="" download>
             <img src="">
         </a>
-    </div>
+    </div>   
+    <script type="text/javascript" src="lib/AES/asymmetric.js"></script>
+    <script type="text/javascript" src="lib/AES/encrypt.js"></script>
+    <script type="text/javascript" src="lib/RSA/jsencrypt.js"></script>
 </body>
 </html>
