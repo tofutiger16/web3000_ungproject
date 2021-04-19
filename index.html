@@ -17,7 +17,7 @@
     <div class="user-input-row">
         <div class="required-input-column">
             <label class="required-input" for="method">Encryption Method:</label>
-            <select id="method" name="method" required>
+            <select id="method" name="method" onchange="disableOptions()" required>
                 <option value="aes">AES</option>
                 <option value="des">DES</option>
                 <option value="rsa">RSA</option>
@@ -31,6 +31,8 @@
         </div>
         <div class="optional-input-column">
             <label class="optional-input" for="mode">Encryption mode:</label>
+                <textarea id="input-text" name="input-text" rows="10" cols="50"
+                placeholder="Or enter text here" oninput="clearOutput()"></textarea>
             <select id="mode" name="mode">
                 <option value="cbc" selected>CBC</option>
                 <option value="cfb">CFB</option>
@@ -84,5 +86,6 @@
     <script type="text/javascript" src="lib/AES/asymmetric.js"></script>
     <script type="text/javascript" src="lib/AES/encrypt.js"></script>
     <script type="text/javascript" src="lib/RSA/jsencrypt.js"></script>
+    <script type="text/javascript" src="lib/rabbit/rabbit-encryption.js"></script>
 </body>
 </html>
