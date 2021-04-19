@@ -31,8 +31,6 @@
         </div>
         <div class="optional-input-column">
             <label class="optional-input" for="mode">Encryption mode:</label>
-                <textarea id="input-text" name="input-text" rows="10" cols="50"
-                placeholder="Or enter text here" oninput="clearOutput()"></textarea>
             <select id="mode" name="mode">
                 <option value="cbc" selected>CBC</option>
                 <option value="cfb">CFB</option>
@@ -63,7 +61,8 @@
     </div>
     <div class="processing-row">
         <div class="column">
-            <textarea id="input-text" name="input-text" rows="10" cols="50" placeholder="Or enter text here"></textarea>
+            <textarea id="input-text" name="input-text" rows="10" cols="50"
+                placeholder="Or enter text here" oninput="clearOutput()"></textarea>
         </div>
         <div class="process-button-column">
             <button onclick="encrypt()" type="button" id="process-button">Process</button>
