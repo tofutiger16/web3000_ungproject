@@ -6,7 +6,7 @@
     }
   }
 
-  //Between selections this function will clear out the passphrase value.
+  //After RSA selection this function will clear out the passphrase value.
   function disableOptions () {
     let inputMethod = document.getElementById('method').value;
 
