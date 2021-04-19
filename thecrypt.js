@@ -1,9 +1,9 @@
 "use-strict";
 
   function clearOutput () {
-    if (!firstInput) {
+    
       document.getElementById("output-text").innerHTML = "";
-    }
+    
   }
 
   //After RSA selection this function will clear out the passphrase value.
