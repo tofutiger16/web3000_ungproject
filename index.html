@@ -48,6 +48,7 @@
                 <option value="zeropadding">Zero Padding</option>
                 <option value="nopadding">No Padding</option>
 				<option value="iso7816">ISO 7816</option>
+				<option value="pkcs1">PKCS#1</option>
             </select>
         </div>
     </div>
@@ -71,6 +72,17 @@
             <textarea id="output-text" name="output-text" rows="10" cols="50" readonly></textarea>
         </div>
     </div>
+	<div class="rsa-key-row" id="rsa-key-row" style="display:none">
+		<div class="privkey-column">
+			<textarea id="privkey" rows="15" cols="50"></textarea>
+		</div>
+		<div class="generate-keys-button-column">
+			<button id="generate">Generate Keys</button>
+		</div>
+		<div class="pubkey-column">
+			<textarea id="pubkey" rows="15" cols="50"></textarea>
+		</div>
+	</div>
     <div id="progress-bar-background">
         <div id="progress-bar-indicator"></div>
         <!---Build out CSS and JS to make dynamic progress bar-->
