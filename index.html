@@ -47,18 +47,17 @@
                 <option value="iso10126">ISO 10126</option>
                 <option value="zeropadding">Zero Padding</option>
                 <option value="nopadding">No Padding</option>
+				<option value="iso7816">ISO 7816</option>
             </select>
         </div>
     </div>
     <div class="passphrase-row">
-        <label class="required-input" for="passphrase">Passphrase:</label>
+        <label class="optional-input" for="passphrase">Passphrase:</label>
         <input type="text" id="passphrase" name="passphrase" placeholder="Secret password">
     </div>
     <div class="file-select-row">
         <label class="optional-input" for="file-select">Select a file:</label>
         <input type="file" id="file-select" name="file-select">
-        <!-- Turn this into nice looking button during CSS
-             https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file-->
     </div>
     <div class="processing-row">
         <div class="column">
@@ -80,11 +79,10 @@
         <p>Click the photo to download your file</p>
         <!--href is the processed file to download, img src is displayed -->
         <a href="" download>
-            <img src="">
+            <img src="coffindownload.png">
         </a>
     </div>
     <script type="text/javascript" src="lib/AES/asymmetric.js"></script>
-    <script type="text/javascript" src="lib/AES/encrypt.js"></script>
     <script type="text/javascript" src="lib/RSA/jsencrypt.js"></script>
     <script type="text/javascript" src="lib/rabbit/rabbit-encryption.js"></script>
 </body>

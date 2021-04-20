@@ -27,9 +27,32 @@
       document.getElementById('cipher-padding').value = "pkcs7";
       document.getElementById('cipher-padding').disabled = true;
     }
+	else if (inputMethod === "des") {
+	  $("select option[value='iso7816']").prop('disabled', false);
+	  $("select option[value='iso97971']").prop('disabled', true);
+	}
     else {
       document.getElementById("passphrase").placeholder = "Secret password";
+      document.getElementById("passphrase").disabled = false;
       document.getElementById('mode').disabled = false;
       document.getElementById('cipher-padding').disabled = false;
+	  $("select option[value='iso7816']").prop('disabled', true);
+	    $("select option[value='iso97971']").prop('disabled', false);
     }
   }
+
+function encrypt(){
+	let type = document.getElementById("method").value;
+
+	switch(type){
+		case "aes":
+			aes();
+	    case "des":
+			des();
+	    case "rsa":
+		    //rsa();
+		    // add function call that will execute the JS for RSA functionality
+	    case "rabbit":
+		    //rabbit();
+	}
+}
