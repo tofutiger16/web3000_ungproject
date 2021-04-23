@@ -70,3 +70,20 @@ function encrypt(){
 	document.getElementById("progress-loader").style.visibility = "hidden";
   }, 1000);
 }
+
+function makeTextFile(text) {
+  let textFile = null;
+  let data = new Blob([text], {type: "text/plain"});
+  if (textFile !== null) {
+	window.URL.revokeObjectURL(textFile);
+  }
+  textFile = window.URL.createObjectURL(data);
+  return textFile;
+}
+
+function createFile() {
+  let textbox = document.getElementById("output-text");
+  let link = document.getElementById("download-file");
+  link.href = makeTextFile(textbox.innerHTML);
+  link.style.display = "block";
+}
