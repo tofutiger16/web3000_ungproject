@@ -57,8 +57,7 @@ function encrypt(){
 	    case "des":
 			des();
 	    case "rsa":
-		    //rsa();
-		    // add function call that will execute the JS for RSA functionality
+		    	rsa();
 	    case "rabbit":
 		    //rabbit();
 	}
