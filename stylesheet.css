@@ -47,6 +47,21 @@ body{
 	display: -webkit-flex;
 	display: flex;
 }
+
+#progress-loader {
+  border: 16px solid #f8f8f2;
+  border-top: 16px solid  #50fa7b;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s cubic-bezier(.1,.7,.5,.3) infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .column, .privkey-column, .pubkey-column{
 	-webkit-flex: 1;
 	-ms-flex: 1;

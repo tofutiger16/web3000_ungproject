@@ -11,7 +11,6 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
     <script type="text/javascript" src="lib/bootstrap.js"></script>
     <script type="text/javascript" src="lib/DES/crypto-sha1-hmac-pbkdf2-blockmodes-des.js"></script>
-    
 </head>
 <body>
     <div class="header">
@@ -69,7 +68,8 @@
                 placeholder="Or enter text here" oninput="clearOutput()"></textarea>
         </div>
         <div class="process-button-column">
-            <button onclick="encrypt()" type="button" id="process-button">Process</button>
+            <button onclick="encrypt()" type="button" id="process-button">Process</button><br>
+			<div class="progress-loader" id="progress-loader" style="visibility: hidden"></div>
         </div>
         <div class="column">
             <textarea id="output-text" name="output-text" rows="10" cols="50" readonly></textarea>
@@ -77,23 +77,20 @@
     </div>
 	<div class="rsa-key-row" id="rsa-key-row" style="display:none">
 		<div class="privkey-column">
-			<textarea id="privkey" rows="15" cols="50"></textarea>
+			<label for="privkey">Private Key</label><br>
+			<textarea id="privkey" name="privkey" rows="15" cols="62"></textarea>
 		</div>
 		<div class="generate-keys-button-column">
 			<button id="generate" onclick="generateKeys()">Generate Keys</button>
 		</div>
 		<div class="pubkey-column">
-			<textarea id="pubkey" rows="15" cols="50"></textarea>
+			<label for="pubkey">Public Key</label><br>
+			<textarea id="pubkey" name="pubkey" rows="15" cols="62"></textarea>
 		</div>
 	</div>
-    <div id="progress-bar-background">
-        <div id="progress-bar-indicator"></div>
-        <!---Build out CSS and JS to make dynamic progress bar-->
-    </div>
     <div class="download-file-row">
         <p>Click the photo to download your file</p>
-        <!--href is the processed file to download, img src is displayed -->
-        <a href="" download>
+        <a href="your_file" download>
             <img src="coffindownload.png">
         </a>
     </div>

@@ -51,14 +51,22 @@
 function encrypt(){
 	let type = document.getElementById("method").value;
 
-	switch(type){
-		case "aes":
-			aes();
-	    case "des":
-			des();
-	    case "rsa":
-		    	rsa();
-	    case "rabbit":
-		    //rabbit();
+	document.getElementById("progress-loader").style.visibility = "visible";
+
+	if (type === "aes") {
+		aes();
 	}
+	else if (type === "des") {
+		des();
+	}
+	else if (type === "rsa") {
+		rsa();
+	}
+	else {
+		//rabbit();
+	}
+
+  setTimeout(function() {
+	document.getElementById("progress-loader").style.visibility = "hidden";
+  }, 1000);
 }
