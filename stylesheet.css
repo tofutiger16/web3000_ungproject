@@ -37,12 +37,10 @@ body{
 	-ms-flex: 1;
 	padding: 10px;
 }
-.passphrase-row {
+.passphrase-row, .file-select-row, .rsa-bit-row {
 	padding: 5px;
 }
-.file-select-row {
-	padding: 5px;
-}
+
 .processing-row, .rsa-key-row {
 	display: -webkit-flex;
 	display: flex;

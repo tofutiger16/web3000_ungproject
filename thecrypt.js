@@ -19,6 +19,7 @@
       document.getElementById('cipher-padding').disabled = true;
 	  document.getElementById('rsa-key-row').style.display = "none";
 	  $("select option[value='pkcs1']").prop('disabled', true);
+	  document.getElementById("rsa-bit-row").style.display = "none";
     }
     else if (inputMethod === "rsa") {
       document.getElementById("passphrase").placeholder="";
@@ -29,12 +30,14 @@
       document.getElementById('cipher-padding').value = "pkcs1";
       document.getElementById('cipher-padding').disabled = true;
 	  document.getElementById('rsa-key-row').style.display = "flex";
+	  document.getElementById("rsa-bit-row").style.display = "block";
     }
 	else if (inputMethod === "des") {
 	  $("select option[value='iso7816']").prop('disabled', false);
 	  $("select option[value='iso97971']").prop('disabled', true);
 	  document.getElementById('rsa-key-row').style.display = "none";
 	  $("select option[value='pkcs1']").prop('disabled', true);
+	  document.getElementById("rsa-bit-row").style.display = "none";
 	}
     else {
       document.getElementById("passphrase").placeholder = "Secret password";
@@ -45,6 +48,7 @@
 	  $("select option[value='iso97971']").prop('disabled', false);
 	  document.getElementById('rsa-key-row').style.display = "none";
 	  $("select option[value='pkcs1']").prop('disabled', true);
+	  document.getElementById("rsa-bit-row").style.display = "none";
     }
   }
 

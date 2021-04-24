@@ -52,9 +52,18 @@
 				<option value="iso7816">ISO 7816</option>
 				<option value="pkcs1">PKCS#1</option>
             </select>
-        </div>
+		</div>
     </div>
-    <div class="passphrase-row">
+	<div class="rsa-bit-row" id="rsa-bit-row" style="display: none">
+		<label class="optional-input" for="bit-size">Bit Size</label>
+			<select id="bit-size" name="bit-size">
+				<option value="512">512</option>
+				<option value="1024">1024</option>
+				<option value="2048">2048</option>
+				<option value="4096">4096</option>
+			</select>
+	</div>
+	<div class="passphrase-row">
         <label class="optional-input" for="passphrase">Passphrase:</label>
         <input type="text" id="passphrase" name="passphrase" placeholder="Secret password">
     </div>
