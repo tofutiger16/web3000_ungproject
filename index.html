@@ -56,7 +56,7 @@
     </div>
 	<div class="rsa-bit-row" id="rsa-bit-row" style="display: none">
 		<label class="optional-input" for="bit-size">Bit Size</label>
-			<select id="bit-size" name="bit-size">
+			<select id="bit-size" name="bit-size" onchange="getKeySize()">
 				<option value="512">512</option>
 				<option value="1024">1024</option>
 				<option value="2048">2048</option>
