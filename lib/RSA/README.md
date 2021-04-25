@@ -23,6 +23,9 @@ This function handles the encryption and decryption aspect of RSA. It takes the 
 ### function generateKeys()
 This function handles the generation of public and private RSA keys. The jsencrypt library is capable of key sizes of 512 - 4096 bit.
 
+### function getKeySize()
+This function handles the changes of the key size
+
 ## Limitations
 * The jsencrypt library only uses one type of padding and that is PKCS#1.
 * jsencrypt does not have a known encryption mode and does not have any indication of what is being used
