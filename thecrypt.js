@@ -67,7 +67,7 @@ function encrypt(){
 		rsa();
 	}
 	else {
-		//rabbit();
+		rabbit();
 	}
 
   setTimeout(function() {
