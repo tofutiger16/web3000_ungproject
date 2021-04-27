@@ -1,5 +1,15 @@
 "use-strict";
 
+let FR= new FileReader();
+let fileText="";
+let input=document.getElementById("file-select");
+input.onchange= function(event){
+FR.readAsText(event.target.files[0])
+}
+FR.onload=function(){
+    console.log(FR.result);
+    fileText=FR.result;
+}
   function clearOutput () {
     
       document.getElementById("output-text").innerHTML = "";
@@ -67,7 +77,7 @@ function encrypt(){
 		rsa();
 	}
 	else {
-		rabbit();
+		rabbit ();
 	}
 
   setTimeout(function() {
