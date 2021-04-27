@@ -1,14 +1,12 @@
-# web3000_ungproject
+# The Crypt
 
-The Crypt
-
-FEATURES THAT WILL BE UPDATED AFTER PRESENTATION ON 4/27:
+## FEATURES THAT WILL BE UPDATED AFTER PRESENTATION ON 4/27:
 
 Add instructions for web app usage to HTML page.
 Add file size limitations for AES, DES, and RSA encryption methods.
 General bug fixes and testing for differences between browsers.
 
-GENERAL
+## GENERAL
 
 This web application is designed to allow for average users access to powerful
 encryption and decryption tools.  The web app uses four different encryption methods
@@ -31,7 +29,7 @@ read the each letter as an array. Once its done reading as text within the
 "function(event)" it will call the onload call back and give the result of the file
 once its done loading and assign it to fileText.
 
-AES
+## AES
 
 (asymmetric.js)
 
@@ -47,7 +45,7 @@ is encryption if true it will have more embedded if statements that find the mod
 selected and output an encrypted message. If the direction is not encrypt then the
 else statement will be run that has decrypt with the right mode and padding.
 
-DES
+## DES
 
 The function des starts and all the variables are declared and assigned their
 respective value from the html page.  Then we use an if statement to see if des is
@@ -61,7 +59,7 @@ crypto-sha1-hmac-pbkdf2-blockmodes-des.js.  In that file I use the two functions
 the end named encrypt and decrypt.  Those function use other variable that are
 declared near the top of the file and that helps you choose the mode and padding.
 
-RABBIT
+## RABBIT
 
 The rabbit-encryption.js file utilizes the rabbit rollup in the CryptoJS project,
 and is written in pure JavaScript.
@@ -75,40 +73,38 @@ being called.
 The CryptoJS library for rabbit encryption/decryption is substantial and only requires
 calling the functions.  No additional modifications were required for implementation.
 
-RSA
+## RSA
 
-# RSA Encryption/Decryption
-
-## Dependencies
+### Dependencies
 
 * Bootstrap v3.1.1: http://getbootstrap.com
 * jQuery v1.10.2: https://jquery.org/license
 * jsencrypt library: https://github.com/travist/jsencrypt
 * jsbn: http://www-cs-students.stanford.edu/~tjw/jsbn/
 
-## Files Present
+### Files Present
 * Within this Folder:
     * <span>README.md</span>: This file!
     * jsencrypt.js: Where jsbn and jsencrypt libraries are merged and used as one
     * RSA_REF.js: driver code for demo RSA HTML webpage
     * RSA-Function: driver code for RSA functions in the project website
 
-## RSA-Function
+### RSA-Function
 RSA-Function is the RSA code for the project website and it has two main functions
 
-### function rsa()
+#### function rsa()
 This function handles the encryption and decryption aspect of RSA. It takes the
 user's input and determines if the website is wanting RSA encrypting or decrypting
 and then determines whether it is encrypting or decrypting the input.
 
-### function generateKeys()
+#### function generateKeys()
 This function handles the generation of public and private RSA keys. The jsencrypt
 library is capable of key sizes of 512 - 4096 bit.
 
-### function getKeySize()
+#### function getKeySize()
 This function handles the changes of the key size
 
-## Limitations
+### Limitations
 * The jsencrypt library only uses one type of padding and that is PKCS#1.
 * jsencrypt does not have a known encryption mode and does not have any indication
   of what is being used
