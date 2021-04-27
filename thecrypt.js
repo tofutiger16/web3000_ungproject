@@ -43,6 +43,10 @@ FR.onload=function(){
 	  document.getElementById("rsa-bit-row").style.display = "block";
     }
 	else if (inputMethod === "des") {
+	  document.getElementById("cipher-padding").disabled = false;
+	  document.getElementById("mode").disabled = false;
+	  document.getElementById("passphrase").placeholder = "Secret password";
+	  document.getElementById("passphrase").disabled = false;
 	  $("select option[value='iso7816']").prop('disabled', false);
 	  $("select option[value='iso97971']").prop('disabled', true);
 	  document.getElementById('rsa-key-row').style.display = "none";
