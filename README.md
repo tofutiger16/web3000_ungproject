@@ -1,4 +1,5 @@
 # The Crypt
+## Group Memebers: Jairo Cuevas, Cody Jones, Taylor Hitt, Zachary DeMoss, Jake Elder
 
 ## FEATURES THAT WILL BE UPDATED AFTER PRESENTATION ON 4/27:
 
@@ -46,6 +47,8 @@ often housing the dead, and encrypt/decrypt and the increasingly popular Dracula
 a custom font was added to the site for the main header that has the letters appear as ghost 
 characters. The layout of the page was designed to allow for a chronological flow through the 
 steps of encrypting or decrypting data.
+
+It is important to note that during the developoment of this web app that a python HTTP server was used during testing. The webapp has only been tested in chromium based browsers(Chrome, Brave) and Firefox browsers.
 
 ## AES
 
@@ -103,7 +106,7 @@ calling the functions.  No additional modifications were required for implementa
 ### Files Present
 * Within this Folder:
     * <span>README.md</span>: This file!
-    * jsencrypt.js: Where jsbn and jsencrypt libraries are merged and used as one
+    * jsencrypt.js: Where jsbn and jsencrypt libraries are merged into one file(it is important to note this is present for offline use only. The webapp uses a cdn.)
     * RSA_REF.js: driver code for demo RSA HTML webpage
     * RSA-Function: driver code for RSA functions in the project website
 
