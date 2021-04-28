@@ -19,7 +19,10 @@ be directly uploaded for encryption/decryption and to create an output file
 if the user chooses to output to a downloadable file in addition to outputting
 to a copy and paste-able textbox. The web app achieves simplicity of use by limiting
 the encryption options to only those necessary for the specific encryption/decryption
-method selected.
+method selected. A loading circle was added to inform the user that data is being processed. 
+There is a timeout on the loading circle to still give that visual processing feedback to the user 
+if the processing does not take much time at all, to establish a consistent expectation they 
+may have when using the page.
 
 
 The fileReader API that reads within the browser and is assigning a new FileReader. Then input
