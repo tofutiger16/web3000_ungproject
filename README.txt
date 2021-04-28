@@ -21,8 +21,10 @@ be directly uploaded for encryption/decryption and to create an output file
 if the user chooses to output to a downloadable file in addition to outputting
 to a copy and paste-able textbox. The web app achieves simplicity of use by limiting
 the encryption options to only those necessary for the specific encryption/decryption
-method selected.
-
+method selected. A loading circle was added to inform the user that data is being processed. 
+There is a timeout on the loading circle to still give that visual processing feedback to the user 
+if the processing does not take much time at all, to establish a consistent expectation they 
+may have when using the page.
 
 The fileReader API that reads within the browser and is assigning a new FileReader. Then input
 is assigned with the file that was uploaded. The onchange event is an event listener
@@ -31,6 +33,20 @@ read the each letter as an array. Once its done reading as text within the
 "function(event)" it will call the onload call back and give the result of the file
 once its done loading and assign it to fileText.
 
+The user can download their file through the use of Blob object. This circumvents Javascript's
+inability to create files on the client side and prevents a NodeJS implementation. A Blob
+object is holds a 'type' string and an array of 'blobParts'. The data from the output textarea 
+is then added to the Blob as its blobparts. After checking whether a file exists,
+the previously created blob is removed and/or a new URL object pointing to the Blob is created.
+The file is then available for download via clicking the photo that appears after creating the 
+file.
+
+The styling for the site was inspired by a play on words with a crypt, as in a chamber
+often housing the dead, and encrypt/decrypt and the increasingly popular Dracula theme 
+(more information available at https://draculatheme.com/). Continuing in the spooky theme 
+a custom font was added to the site for the main header that has the letters appear as ghost 
+characters. The layout of the page was designed to allow for a chronological flow through the 
+steps of encrypting or decrypting data.
 
 AES
 
