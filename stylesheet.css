@@ -30,15 +30,13 @@ body{
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
-	padding: 10px;
 }
 .optional-input-column {
 	-webkit-flex: 1;
 	-ms-flex: 1;
-	padding: 10px;
 }
 .passphrase-row, .file-select-row, .rsa-bit-row {
-	padding: 5px;
+	padding: 10px;
 }
 
 .processing-row, .rsa-key-row {
@@ -79,10 +77,11 @@ body{
 textarea, #passphrase {
 	background-color: #f8f8f2;
 	color: #44475a;
+	border-radius: 5px;
 }
 
 .download-file-row {
-	padding: 5px;
+	padding: 10px;
 }
 
 @font-face {
