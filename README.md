@@ -3,9 +3,9 @@
 
 ## FEATURES THAT WILL BE UPDATED AFTER PRESENTATION ON 4/27:
 
-Add instructions for web app usage to HTML page.
-Add file size limitations for AES, DES, and RSA encryption methods.
-General bug fixes and testing for differences between browsers.
+* Add instructions for web app usage to HTML page.
+* Add file size limitations for AES, DES, and RSA encryption methods.
+* General bug fixes and testing for differences between browsers.
 
 ## GENERAL
 
