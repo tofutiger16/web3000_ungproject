@@ -111,12 +111,15 @@ calling the functions.  No additional modifications were required for implementa
     * RSA-Function: driver code for RSA functions in the project website
 
 ### RSA-Function
-RSA-Function is the RSA code for the project website and it has two main functions
+RSA-Function is the RSA code for the project website and it has four main functions
 
 #### function rsa()
 This function handles the encryption and decryption aspect of RSA. It takes the
 user's input and determines if the website is wanting RSA encrypting or decrypting
 and then determines whether it is encrypting or decrypting the input.
+
+### function RSAvalidInput()
+This function is dedicated to limiting file size and to check if the userInput lacks data or a file input.
 
 #### function generateKeys()
 This function handles the generation of public and private RSA keys. The jsencrypt
