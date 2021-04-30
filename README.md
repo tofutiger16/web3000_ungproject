@@ -29,7 +29,7 @@ may have when using the page.
 The fileReader API that reads within the browser and is assigning a new FileReader. Then input
 is assigned with the file that was uploaded. The onchange event is an event listener
 that will allow input to be parsed. The File reader will read the file as text and
-read the each letter as an array. Once its done reading as text within the
+read each letter as an array. Once its done reading as text within the
 "function(event)" it will call the onload call back and give the result of the file
 once its done loading and assign it to fileText.
 
