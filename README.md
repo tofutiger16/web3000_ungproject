@@ -68,9 +68,9 @@ else statement will be run that has decrypt with the right mode and padding.
 
 ## DES
 
-The function des starts and all the variables are declared and assigned their
+The function des() starts and all the variables are declared and assigned their
 respective value from the html page.  Then we use an if statement to see if des is
-selected on the html page then we look to see if encryption or if decryption is
+selected on the html page.  After that we look to see if encryption or if decryption is
 selected.  Finally, we use if and else if statements to see what mode and what padding
 should be used.  Then to output the text I modify the innerHTML property of the
 output text area.
