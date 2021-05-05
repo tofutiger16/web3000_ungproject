@@ -1,11 +1,15 @@
 The Crypt
 Group Memebers: Jairo Cuevas, Cody Jones, Taylor Hitt, Zachary DeMoss, Jake Elder
 
-FEATURES THAT WILL BE UPDATED AFTER PRESENTATION ON 4/27:
 
-Add instructions for web app usage to HTML page.
-Add file size limitations for AES, DES, and RSA encryption methods.
-General bug fixes and testing for differences between browsers.
+## Startup Instructions:
+
+1. Download the repository (either git clone or download the zip file)
+2. Open Command prompt or terminal and navigate to the web3000_project folder
+3. Start a Python HTTP Server
+4. Start a chromium based or firefox based browser
+5. navigate to localhost:port(check command prompt for the port, default 8000)
+6. Start using the webapp
 
 
 GENERAL
