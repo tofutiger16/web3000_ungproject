@@ -1,11 +1,15 @@
 The Crypt
 Group Memebers: Jairo Cuevas, Cody Jones, Taylor Hitt, Zachary DeMoss, Jake Elder
 
-FEATURES THAT WILL BE UPDATED AFTER PRESENTATION ON 4/27:
 
-Add instructions for web app usage to HTML page.
-Add file size limitations for AES, DES, and RSA encryption methods.
-General bug fixes and testing for differences between browsers.
+## Startup Instructions:
+
+1. Download the repository (either git clone or download the zip file)
+2. Open Command prompt or terminal and navigate to the web3000_project folder
+3. Start a Python HTTP Server
+4. Start a chromium based or firefox based browser
+5. navigate to localhost:port(check command prompt for the port, default 8000)
+6. Start using the webapp
 
 
 GENERAL
@@ -99,9 +103,9 @@ CBC (the default), CFB, CTR, OFB, and ECB as modes. Also suports Pkcs7 (the defa
 
 DES
 
-The function des starts and all the variables are declared and assigned their
+The function des() starts and all the variables are declared and assigned their
 respective value from the html page.  Then we use an if statement to see if des is
-selected on the html page then we look to see if encryption or if decryption is
+selected on the html page. After that we look to see if encryption or if decryption is
 selected.  Finally, we use if and else if statements to see what mode and what padding
 should be used.  Then to output the text I modify the innerHTML property of the
 output text area.
@@ -145,12 +149,15 @@ Files Present
     * RSA-Function: driver code for RSA functions in the project website
 
 RSA-Function
-RSA-Function is the RSA code for the project website and it has two main functions
+RSA-Function is the RSA code for the project website and it has four main functions
 
 function rsa()
 This function handles the encryption and decryption aspect of RSA. It takes the
 user's input and determines if the website is wanting RSA encrypting or decrypting
 and then determines whether it is encrypting or decrypting the input.
+
+### function RSAvalidInput()
+This function is dedicated to limiting file size and to check if the userInput lacks data or a file input.
 
 function generateKeys()
 This function handles the generation of public and private RSA keys. The jsencrypt
